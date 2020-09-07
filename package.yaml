@@ -1,0 +1,27 @@
+name:                purs-imports
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/githubuser/purs-imports#readme
+license:             BSD3
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2020 Author name here
+category:            Web
+extra-source-files:
+- README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+  - text
+  - safe
+  - aeson
+  - bytestring
+  - pretty-show
+  - containers
+  - purescript
+
+executables:
+  purs-imports:
+    source-dirs:      src
+    main:             Main.hs
