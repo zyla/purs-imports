@@ -14,6 +14,7 @@ import Data.Aeson (eitherDecode, FromJSON)
 import Text.Show.Pretty (pPrint)
 import GHC.Generics
 import qualified Data.Map.Strict as Map
+import System.Environment
 
 data PursErrors = PursErrors
   { warnings :: [Warning]
@@ -78,7 +79,8 @@ joinLines = foldMap snd
 
 main :: IO ()
 main = do
-  input <- BL.readFile "purs-errors.json"
+  [filename] <- getArgs
+  input <- BL.readFile filename
   pursOutput <-
     case eitherDecode @PursErrors input of
       Left err ->
