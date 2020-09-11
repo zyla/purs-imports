@@ -28,3 +28,5 @@ purs-imports purs-errors.json
 Note: you must only invoke this tool once with a given set of suggestions. Applying suggestions twice can result in arbitrarily corrupting the files. The tool doesn't check if the suggestions were generated for the current source file contents (and in fact has no way of knowing whether that's the case).
 
 **WARNING**: This tool modifies source files in place. Make sure you use a VCS.
+
+**WARNING**: Currently this tool also modifies dependency sources (in `.psc-package` etc.), which is weird.
