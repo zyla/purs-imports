@@ -44,7 +44,7 @@ gatherSuggestions :: [Warning] -> Map.Map FileName [Suggestion]
 gatherSuggestions = fmap (List.sortOn (startLine . replaceRange)) . Map.fromListWith (++) . mapMaybe process
   where
   process (Warning { filename, errorCode, suggestion }) = do
-    guard $ errorCode `elem` ["UnusedDctorImport", "UnusedExplicitImport", "ImplicitImport"]
+    guard $ errorCode `elem` ["UnusedImport", "UnusedDctorImport", "UnusedExplicitImport", "ImplicitImport"]
     suggestion' <- suggestion
 
     -- | We don't want explicit Prelude imports
